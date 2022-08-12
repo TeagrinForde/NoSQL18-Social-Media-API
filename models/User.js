@@ -1,8 +1,8 @@
-const { Schema, Types } = require("mongoose");
+const { Schema, model } = require("mongoose");
 const thoughtSchema = require('./Thought');
 
 const userSchema = new Schema({
-  username: {
+  username: { //do I need an ID for this?
     type: String,
     required: true,
     unique: true,
@@ -14,20 +14,21 @@ const userSchema = new Schema({
     unique: true,
     match: [
       /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-      "Please fill a valid email address",
+      "Please enter a valid email address",
     ],
   },
-  thoughts: {
-    type: Schema.Types.ObjectId,
-    default: () => new Types.ObjectId(), //array of _id values referencing the Thought model?
-  },
-  friends: {
-    type: Schema.Types.ObjectId,
-    default: () => new Types.ObjectId(), //array of _id values referencing the User model?
-  },
-});
+  thoughts: [thoughtSchema], //array of _id values referencing the Thought model?
+},
+  // friends: {},   //array of _id values self-referencing the User model?
+  // {
+  //   toJSON: { //create a virtual called friendCount that retrieves the length of the user's friends array field on query
+  //     virtuals: true,
+  //   },
+  //   id: true,
+  // }
+);
 
-//create a virtual called friendCount that retrieves the length of the user's friends array field on query
+
 
 const User = model('user', userSchema);
 
