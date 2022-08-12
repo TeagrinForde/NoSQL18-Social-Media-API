@@ -1,5 +1,7 @@
 const { Schema, Types } = require("mongoose");
 
+
+
 const reactionSchema = new Schema({
   reactionId: {
     type: Schema.Types.ObjectId,
@@ -18,10 +20,10 @@ const reactionSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-//   toJSON: {  //Use a getter method to format the timestamp on query
-//     getters: true,
-//   }
+  toJSON: {  //Use a getter method to format the timestamp on query
+    getters: true,
+  }
 });
 
-const Reaction = model("reaction", reactionSchema);
 //This will not be a model, but rather will be used as the reaction field's subdocument schema in the Thought model
+const Reaction = model("reaction", reactionSchema);
