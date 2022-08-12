@@ -14,7 +14,7 @@ const thoughtSchema = new Schema(
       type: Date,
       default: Date.now,
     },
-    username: {     //attach to USER?
+    username: {     
       type: String,
       required: true,
     },
@@ -30,6 +30,8 @@ const thoughtSchema = new Schema(
 );
 
 //create a virtual called reactionCount that retrieves the length of the thought's reactions array field on query
-thoughtSchema.virtual('reactionCount').get(function() { return `${this.reactions.length}`; }); //set needed?
+thoughtSchema.virtual('reactionCount').get(function() { return `${this.reactions.length}`; });
+
+const Thought = model('thought', thoughtSchema);
 
 module.exports = Thought;
