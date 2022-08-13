@@ -17,10 +17,8 @@ const reactionSchema = new Schema({
   createdAt: {
     type: Date,
     default: Date.now,
+    get: () => Date.now,
   },
-  toJSON: {  //Use a getter method to format the timestamp on query
-    getters: true,
-  }
 });
 
 //This will not be a model, but rather will be used as the reaction field's subdocument schema in the Thought model

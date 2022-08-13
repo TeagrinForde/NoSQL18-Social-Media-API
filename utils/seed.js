@@ -1,6 +1,6 @@
 const connection = require('../config/connection');
 const { Thought, User } = require('../models');
-const (User, Thought, Reaction) = require('../models');
+const { User, Thought } = require('../models'); //Reaction 'model' needed?
 const getSeedData = require('./data');
 
 connection.on('error', (err) => err);
