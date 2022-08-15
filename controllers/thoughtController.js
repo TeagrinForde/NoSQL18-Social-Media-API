@@ -42,7 +42,7 @@ module.exports = {
   createReaction(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
-      { $push: { reaction: req.params.reactionId } }
+      { $push: { reactions: req.body }}
     )
       .then((thought) =>
         !thought

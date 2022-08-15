@@ -23,7 +23,7 @@
 
   ## Usage
 
-  Once dependencies and database is installed, run ```node server.js``` in the terminal and open insomnia to run CRUD routes. 
+  Once dependencies and database is installed, run ```npm start``` in the terminal and open insomnia to run CRUD routes. 
   A video of Teagrin Forde covering the API CRUD routes can be viewed here: 
   
 
