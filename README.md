@@ -24,7 +24,7 @@
   ## Usage
 
   Once dependencies and database is installed, run ```npm start``` in the terminal and open insomnia to run CRUD routes. 
-  A video of Teagrin Forde covering the API CRUD routes can be viewed here: 
+  A video of Teagrin Forde covering the API CRUD routes can be viewed here: https://drive.google.com/file/d/1KfB1UE2rIYL0cZ82ZzmkpQ1LAv4xr-RU/view
   
 
   ## Contribution Guidelines
