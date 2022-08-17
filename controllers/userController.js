@@ -31,12 +31,12 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
-  deleteUser(req, res) {
+  deleteUser(req, res) {    
     User.findOneAndDelete({ _id: req.params.userId })
       .then((user) =>
         !user
           ? res.status(404).json({ message: "User does not exist" })
-          : Thought.deleteMany({ _id: { $in: user.thoughts }})
+          : Thought.deleteMany({ _id: { $in: username.thoughts }}) //how to delete thoughts when you delete a user???
       )
       .catch((err) => res.status(500).json(err));
   },
